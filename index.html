@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Yara 💖</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #03051c;
+  color: white;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+}
+
+/* Stars */
+.star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.2; }
+  to { opacity: 1; }
+}
+
+/* Moon */
+.moon {
+  position: absolute;
+  top: 70px;
+  right: 12%;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #fff8d6;
+  box-shadow: 0 0 35px #fff3a6;
+}
+
+.moon::before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: #ded9bd;
+  border-radius: 50%;
+  top: 25px;
+  left: 25px;
+  opacity: .5;
+}
+
+.moon::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #d6d0b5;
+  border-radius: 50%;
+  top: 70px;
+  left: 70px;
+  opacity: .5;
+}
+
+/* Clouds */
+.cloud {
+  position: absolute;
+  width: 180px;
+  height: 55px;
+  background: rgba(255,255,255,.12);
+  border-radius: 50px;
+  filter: blur(2px);
+  animation: drift 18s linear infinite;
+}
+
+.cloud::before,
+.cloud::after {
+  content: "";
+  position: absolute;
+  background: rgba(255,255,255,.13);
+  border-radius: 50%;
+}
+
+.cloud::before {
+  width: 75px;
+  height: 75px;
+  top: -35px;
+  left: 35px;
+}
+
+.cloud::after {
+  width: 60px;
+  height: 60px;
+  top: -25px;
+  right: 25px;
+}
+
+.cloud1 {
+  top: 30%;
+  left: -200px;
+}
+
+.cloud2 {
+  top: 55%;
+  left: -300px;
+  animation-delay: 7s;
+}
+
+@keyframes drift {
+  from { transform: translateX(0); }
+  to { transform: translateX(130vw); }
+}
+
+/* Main message */
+.container {
+  position: relative;
+  z-index: 5;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: clamp(40px, 10vw, 80px);
+  margin: 0;
+  color: #fff;
+  text-shadow:
+    0 0 10px #ff7bd5,
+    0 0 25px #ff4fc3,
+    0 0 50px #ff1493;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #ff7bd5;
+  }
+  to {
+    text-shadow:
+      0 0 20px #ff7bd5,
+      0 0 40px #ff1493,
+      0 0 70px #ff1493;
+  }
+}
+
+.message {
+  margin-top: 20px;
+  max-width: 650px;
+  font-size: 20px;
+  line-height: 1.6;
+  color: #f4eaff;
+}
+
+.heart {
+  position: absolute;
+  font-size: 25px;
+  animation: float 5s linear infinite;
+  opacity: .8;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(100vh) scale(.7);
+    opacity: 0;
+  }
+  20% { opacity: 1; }
+  to {
+    transform: translateY(-20vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* Shooting star */
+.shooting-star {
+  position: absolute;
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, white, transparent);
+  transform: rotate(-35deg);
+  animation: shoot 4s linear infinite;
+  top: 20%;
+  left: -120px;
+}
+
+@keyframes shoot {
+  0% {
+    left: -120px;
+    top: 20%;
+    opacity: 0;
+  }
+  10% { opacity: 1; }
+  100% {
+    left: 120%;
+    top: 80%;
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="moon"></div>
+
+<div class="cloud cloud1"></div>
+<div class="cloud cloud2"></div>
+
+<div class="shooting-star"></div>
+
+<div class="container">
+  <h1>Happy Birthday Yara 💖</h1>
+
+  <div class="message">
+    🌌✨ To someone truly special... ✨🌌<br><br>
+
+    I hope your birthday is as beautiful and amazing
+    as you are. 💕<br><br>
+
+    May your days be filled with happiness,
+    unforgettable memories, and endless smiles. 🌙✨<br><br>
+
+    <b>Happy Birthday, Yara! 🎂💖</b>
+  </div>
+</div>
+
+<script>
+/* Create stars */
+for (let i = 0; i < 180; i++) {
+  const star = document.createElement("div");
+  star.className = "star";
+
+  star.style.left = Math.random() * 100 + "vw";
+  star.style.top = Math.random() * 100 + "vh";
+  star.style.animationDelay = Math.random() * 3 + "s";
+
+  document.body.appendChild(star);
+}
+
+/* Floating hearts */
+const hearts = ["♡", "♥", "✨", "💖"];
+
+for (let i = 0; i < 25; i++) {
+  const heart = document.createElement("div");
+
+  heart.className = "heart";
+  heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (4 + Math.random() * 5) + "s";
+  heart.style.animationDelay = Math.random() * 5 + "s";
+
+  document.body.appendChild(heart);
+}
+</script>
+
+</body>
+</html>
